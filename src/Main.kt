@@ -77,6 +77,9 @@ fun main() {
     println("1. Exercise 1")
     println("2. Exercise 2")
     println("3. Exercise 3")
+    println("4. Exercise 4")
+    println("5. Exercise 5")
+
 
     val option = readLine()?.toIntOrNull()
     when (option) {
@@ -84,6 +87,7 @@ fun main() {
         2 -> Numbers.Exercise2.execution()
         3 -> Numbers.Exercise3.execution()
         4 -> Numbers.Exercise4.execution()
+        5 -> Numbers.Exercise5.execution()
         else -> println("Not valid option")
     }
 }

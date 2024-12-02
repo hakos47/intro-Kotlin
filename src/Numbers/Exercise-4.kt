@@ -11,7 +11,7 @@ object Exercise4 {
     }
 
     fun execution() {
-        println("Exercise 3: División segura")
+        println("Exercise 4: División segura")
 
         println("Ingrese el dividendo:")
         val dividendo = readLine()?.toIntOrNull()
