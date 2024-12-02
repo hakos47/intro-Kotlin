@@ -72,4 +72,13 @@ fun main() {
 
     //TIP sout auto complete println
    // println()
+
+    println("Select exercise Numbers")
+    println("1. Exercise 1")
+
+    val option = readLine()?.toIntOrNull()
+    when (option) {
+        1 -> Numbers.Exercise1.execution()
+        else -> println("Not valid option")
+    }
 }
