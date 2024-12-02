@@ -4,7 +4,7 @@ fun main() {
     //TIP   1. Tipos de Datos
 
    // Enteros
-
+/*
     val integer: Int = 29
     val long: Long = 1000000000000L
 
@@ -72,7 +72,7 @@ fun main() {
 
     //TIP sout auto complete println
    // println()
-
+*/
     println("Select exercise Numbers")
     println("1. Exercise 1")
     println("2. Exercise 2")
