@@ -83,6 +83,7 @@ fun main() {
         1 -> Numbers.Exercise1.execution()
         2 -> Numbers.Exercise2.execution()
         3 -> Numbers.Exercise3.execution()
+        4 -> Numbers.Exercise4.execution()
         else -> println("Not valid option")
     }
 }
