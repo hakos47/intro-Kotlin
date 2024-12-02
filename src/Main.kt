@@ -75,10 +75,12 @@ fun main() {
 
     println("Select exercise Numbers")
     println("1. Exercise 1")
+    println("2. Exercise 1")
 
     val option = readLine()?.toIntOrNull()
     when (option) {
         1 -> Numbers.Exercise1.execution()
+        2 -> Numbers.Exercise2.execution()
         else -> println("Not valid option")
     }
 }
