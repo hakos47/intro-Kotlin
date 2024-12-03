@@ -1,3 +1,29 @@
+import java.lang.System.exit
+
+fun menuNumbers() {
+    println("0. Return")
+    println("1. Exercise 1")
+    println("2. Exercise 2")
+    println("3. Exercise 3")
+    println("4. Exercise 4")
+    println("5. Exercise 5")
+    println("6. Exercise 6")
+    println("7. Exercise 7")
+    println("8. Exercise 8")
+
+}
+
+fun menuStrings() {
+    println("0. Return")
+    println("1. Exercise 1")
+    println("2. Exercise 2")
+    println("3. Exercise 3")
+    println("4. Exercise 4")
+    println("5. Exercise 5")
+    println("6. Exercise 6")
+    println("7. Exercise 7")
+    println("8. Exercise 8")
+}
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -74,26 +100,41 @@ fun main() {
    // println()
 */
     println("Select exercise Numbers")
-    println("1. Exercise 1")
-    println("2. Exercise 2")
-    println("3. Exercise 3")
-    println("4. Exercise 4")
-    println("5. Exercise 5")
-    println("6. Exercise 6")
-    println("7. Exercise 7")
-    println("8. Exercise 8")
 
 
-    val option = readLine()?.toIntOrNull()
-    when (option) {
-        1 -> Numbers.Exercise1.execution()
-        2 -> Numbers.Exercise2.execution()
-        3 -> Numbers.Exercise3.execution()
-        4 -> Numbers.Exercise4.execution()
-        5 -> Numbers.Exercise5.execution()
-        6 -> Numbers.Exercise6.execution()
-        7 -> Numbers.Exercise7.execution()
-        8 -> Numbers.Exercise8.execution()
-        else -> println("Not valid option")
-    }
+
+
+    do {
+        println("\n Selecciona el tipo de ejercicios (numbers/strings) o escribe 'exit' para salir:")
+        val category = readLine()?.lowercase()
+
+        if (category == "exit") break
+
+        when (category) {
+            "numbers", "strings" -> {
+                do {
+                    if (category == "strings") menuStrings()
+                    else if (category == "numbers") menuNumbers()
+                    val option = readLine()?.toIntOrNull()
+
+
+                    when (option) {
+                        1 -> if (category == "numbers") Numbers.Exercise1.execution() else Strings.Exercise1.execution()
+                        2 -> if (category == "numbers") Numbers.Exercise2.execution()
+                        3 -> if (category == "numbers") Numbers.Exercise3.execution()
+                        4 -> if (category == "numbers") Numbers.Exercise4.execution()
+                        5 -> if (category == "numbers") Numbers.Exercise5.execution()
+                        6 -> if (category == "numbers") Numbers.Exercise6.execution()
+                        7 -> if (category == "numbers") Numbers.Exercise7.execution()
+                        8 -> if (category == "numbers") Numbers.Exercise8.execution()
+                        0 -> break
+                        else -> println("Opción inválida. Por favor, elige un número entre 1 y 8 o 0 para salir.")
+                    }
+                } while (option != 0)
+            }
+            else -> println("Categoría inválida. Por favor, escribe 'numbers', 'strings' o 'exit'.")
+        }
+    } while (category != "exit")
 }
+
+
