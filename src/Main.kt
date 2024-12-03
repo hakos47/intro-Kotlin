@@ -1,7 +1,8 @@
 import java.lang.System.exit
 
 fun menuNumbers() {
-    println("\n0. Return")
+    println("\nQue ejercicios de Numeros quieres ejecutar?:")
+    println("0. Return")
     println("1. Exercise 1")
     println("2. Exercise 2")
     println("3. Exercise 3")
@@ -14,7 +15,8 @@ fun menuNumbers() {
 }
 
 fun menuStrings() {
-    println("\n0. Return")
+    println("\nQue ejercicios de Strings quieres ejecutar?:")
+    println("0. Return")
     println("1. Exercise 1")
     println("2. Exercise 2")
     println("3. Exercise 3")
@@ -119,7 +121,7 @@ fun main() {
                     when (option) {
                         1 -> if (category == "numbers") Numbers.Exercise1.execution() else Strings.Exercise1.execution()
                         2 -> if (category == "numbers") Numbers.Exercise2.execution() else Strings.Exercise2.execution()
-                        3 -> if (category == "numbers") Numbers.Exercise3.execution()
+                        3 -> if (category == "numbers") Numbers.Exercise3.execution() else Strings.Exercise3.execution()
                         4 -> if (category == "numbers") Numbers.Exercise4.execution()
                         5 -> if (category == "numbers") Numbers.Exercise5.execution()
                         6 -> if (category == "numbers") Numbers.Exercise6.execution()
