@@ -1,7 +1,7 @@
 import java.lang.System.exit
 
 fun menuNumbers() {
-    println("0. Return")
+    println("\n0. Return")
     println("1. Exercise 1")
     println("2. Exercise 2")
     println("3. Exercise 3")
@@ -14,15 +14,13 @@ fun menuNumbers() {
 }
 
 fun menuStrings() {
-    println("0. Return")
+    println("\n0. Return")
     println("1. Exercise 1")
     println("2. Exercise 2")
     println("3. Exercise 3")
     println("4. Exercise 4")
     println("5. Exercise 5")
     println("6. Exercise 6")
-    println("7. Exercise 7")
-    println("8. Exercise 8")
 }
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
