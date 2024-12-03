@@ -122,7 +122,7 @@ fun main() {
                         1 -> if (category == "numbers") Numbers.Exercise1.execution() else Strings.Exercise1.execution()
                         2 -> if (category == "numbers") Numbers.Exercise2.execution() else Strings.Exercise2.execution()
                         3 -> if (category == "numbers") Numbers.Exercise3.execution() else Strings.Exercise3.execution()
-                        4 -> if (category == "numbers") Numbers.Exercise4.execution()
+                        4 -> if (category == "numbers") Numbers.Exercise4.execution() else Strings.Exercise4.execution()
                         5 -> if (category == "numbers") Numbers.Exercise5.execution()
                         6 -> if (category == "numbers") Numbers.Exercise6.execution()
                         7 -> if (category == "numbers") Numbers.Exercise7.execution()
