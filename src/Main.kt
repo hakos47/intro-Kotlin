@@ -1,4 +1,3 @@
-import java.lang.System.exit
 
 fun menuNumbers() {
     println("\nQue ejercicios de Numeros quieres ejecutar?:")
@@ -24,6 +23,21 @@ fun menuStrings() {
     println("5. Exercise 5")
     println("6. Exercise 6")
 }
+
+fun executeExercise(category: String, option: Int?) {
+    when (option) {
+        1 -> if (category == "numbers") Numbers.Exercise1.execution() else Strings.Exercise1.execution()
+        2 -> if (category == "numbers") Numbers.Exercise2.execution() else Strings.Exercise2.execution()
+        3 -> if (category == "numbers") Numbers.Exercise3.execution() else Strings.Exercise3.execution()
+        4 -> if (category == "numbers") Numbers.Exercise4.execution() else Strings.Exercise4.execution()
+        5 -> if (category == "numbers") Numbers.Exercise5.execution() else Strings.Exercise5.execution()
+        6 -> if (category == "numbers") Numbers.Exercise6.execution() else Strings.Exercise6.execution()
+        7 -> if (category == "numbers") Numbers.Exercise7.execution()
+        8 -> if (category == "numbers") Numbers.Exercise8.execution()
+        else -> println("Opción inválida. Por favor, elige un número entre 1 y 8 o 0 para salir.")
+    }
+}
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -99,11 +113,6 @@ fun main() {
     //TIP sout auto complete println
    // println()
 */
-    println("Select exercise Numbers")
-
-
-
-
     do {
         println("\n Selecciona el tipo de ejercicios (numbers/strings) o escribe 'exit' para salir:")
         val category = readLine()?.lowercase()
@@ -116,20 +125,10 @@ fun main() {
                     if (category == "strings") menuStrings()
                     else if (category == "numbers") menuNumbers()
                     val option = readLine()?.toIntOrNull()
+                    if (option == null) break
+                    if (option == 0) break
+                    executeExercise(category, option)
 
-
-                    when (option) {
-                        1 -> if (category == "numbers") Numbers.Exercise1.execution() else Strings.Exercise1.execution()
-                        2 -> if (category == "numbers") Numbers.Exercise2.execution() else Strings.Exercise2.execution()
-                        3 -> if (category == "numbers") Numbers.Exercise3.execution() else Strings.Exercise3.execution()
-                        4 -> if (category == "numbers") Numbers.Exercise4.execution() else Strings.Exercise4.execution()
-                        5 -> if (category == "numbers") Numbers.Exercise5.execution() else Strings.Exercise5.execution()
-                        6 -> if (category == "numbers") Numbers.Exercise6.execution() else Strings.Exercise6.execution()
-                        7 -> if (category == "numbers") Numbers.Exercise7.execution()
-                        8 -> if (category == "numbers") Numbers.Exercise8.execution()
-                        0 -> break
-                        else -> println("Opción inválida. Por favor, elige un número entre 1 y 8 o 0 para salir.")
-                    }
                 } while (option != 0)
             }
             else -> println("Categoría inválida. Por favor, escribe 'numbers', 'strings' o 'exit'.")
