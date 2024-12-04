@@ -24,10 +24,7 @@ class Arrays {
             println("Introduce la posicion y el numero que quieres insertar:")
             val inputArray = readlnOrNull()
             if (inputArray.isNullOrEmpty()) return println("Secuencia no valida formato: <position> <number>")
-
             var newArray = inputArray.split(" ").mapNotNull { it.toIntOrNull() }
-            println("${newArray}")
-            println("${newArray[0]}, ${newArray[1]}")
             var position = newArray[0] - 1
             if (position < 0 ) position = 0
             val number = newArray[1]
