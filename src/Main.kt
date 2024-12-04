@@ -22,6 +22,7 @@ fun menuStrings() {
     println("4. Exercise 4")
     println("5. Exercise 5")
     println("6. Exercise 6")
+
 }
 
 fun executeExercise(category: String, option: Int?) {

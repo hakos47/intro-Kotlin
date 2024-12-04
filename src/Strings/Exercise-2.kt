@@ -3,7 +3,7 @@ package Strings
 object Exercise2 {
     fun execution() {
         println("Introduce la cadena de texto")
-        var words = readlnOrNull()
+        val words = readlnOrNull()
         if (words == null  || words == "") return
         println("palabra a sustituir")
         val rempalceWords = readlnOrNull()
