@@ -16,12 +16,6 @@ object Exercise5 {
         return firstTwo == lastTwo
     }
 
-    fun main() {
-        val phrase = "abccab"
-        val result = checkStartEndMatch(phrase)
-        println(result) // Output: true
-    }
-
     fun execution() {
         println("Introduce La cadena de texto")
         val words = readlnOrNull()

@@ -1,3 +1,4 @@
+@file:Suppress("UNUSED_EXPRESSION")
 
 fun menuNumbers() {
     println("\nQue ejercicios de Numeros quieres ejecutar?:")
@@ -25,14 +26,47 @@ fun menuStrings() {
 
 }
 
+fun menuArrays() {
+    println("\nQue ejercicios de Arrays quieres ejecutar?:")
+    println("0. Return")
+    println("1. Exercise 1")
+    println("2. Exercise 2")
+    println("3. Exercise 3")
+    println("4. Exercise 4")
+    println("5. Exercise 5")
+    println("6. Exercise 6")
+
+}
+
+var numInst = Arrays.Numbers()
+fun ExecArrays(exercise: Int) {
+    println("numInst exercise=${numInst.numbers.isEmpty()}")
+    if (numInst.numbers.isEmpty()) { numInst.start() }
+    var next:String = ""
+    do {
+        println("Continuar con el mismo arrays? y/n")
+        next = readln()
+
+    } while (next != "y" && next != "n")
+    if (next == "n") numInst.start()
+
+    when (exercise) {
+        1 -> numInst.exec1()
+    }
+
+}
+
 fun executeExercise(category: String, option: Int?) {
+    if (category == "arrays") {
+        ExecArrays(option!!)
+    }
     when (option) {
-        1 -> if (category == "numbers") Numbers.Exercise1.execution() else Strings.Exercise1.execution()
-        2 -> if (category == "numbers") Numbers.Exercise2.execution() else Strings.Exercise2.execution()
-        3 -> if (category == "numbers") Numbers.Exercise3.execution() else Strings.Exercise3.execution()
-        4 -> if (category == "numbers") Numbers.Exercise4.execution() else Strings.Exercise4.execution()
-        5 -> if (category == "numbers") Numbers.Exercise5.execution() else Strings.Exercise5.execution()
-        6 -> if (category == "numbers") Numbers.Exercise6.execution() else Strings.Exercise6.execution()
+        1 -> if (category == "numbers") Numbers.Exercise1.execution() else if (category == "strings") Strings.Exercise1.execution()
+        2 -> if (category == "numbers") Numbers.Exercise2.execution() else if (category == "strings") Strings.Exercise2.execution()
+        3 -> if (category == "numbers") Numbers.Exercise3.execution() else if (category == "strings") Strings.Exercise3.execution()
+        4 -> if (category == "numbers") Numbers.Exercise4.execution() else if (category == "strings") Strings.Exercise4.execution()
+        5 -> if (category == "numbers") Numbers.Exercise5.execution() else if (category == "strings") Strings.Exercise5.execution()
+        6 -> if (category == "numbers") Numbers.Exercise6.execution() else if (category == "strings") Strings.Exercise6.execution()
         7 -> if (category == "numbers") Numbers.Exercise7.execution()
         8 -> if (category == "numbers") Numbers.Exercise8.execution()
         else -> println("Opción inválida. Por favor, elige un número entre 1 y 8 o 0 para salir.")
@@ -115,16 +149,17 @@ fun main() {
    // println()
 */
     do {
-        println("\n Selecciona el tipo de ejercicios (numbers/strings) o escribe 'exit' para salir:")
+        println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays) o escribe 'exit' para salir:")
         val category = readLine()?.lowercase()
 
         if (category == "exit") break
 
         when (category) {
-            "numbers", "strings" -> {
+            "numbers", "strings", "arrays"-> {
                 do {
                     if (category == "strings") menuStrings()
                     else if (category == "numbers") menuNumbers()
+                    else if (category == "arrays") menuArrays()
                     val option = readLine()?.toIntOrNull()
                     if (option == null) break
                     if (option == 0) break
