@@ -54,6 +54,7 @@ fun ExecArrays(exercise: Int) {
         1 -> numInst.exec1()
         2 -> numInst.exec2()
         3 -> numInst.exec3()
+        4 -> numInst.exec4()
     }
 
 }
