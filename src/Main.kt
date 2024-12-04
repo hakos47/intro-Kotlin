@@ -41,20 +41,22 @@ fun menuArrays() {
 var numInst = Arrays.Numbers()
 fun ExecArrays(exercise: Int) {
     println("numInst exercise=${numInst.numbers.isEmpty()}")
-    if (numInst.numbers.isEmpty()) { numInst.start() }
+    if (numInst.numbers.isEmpty() && exercise != 5) { numInst.start(exercise) }
+    if (numInst.stringsArray.isEmpty() && exercise == 5) { numInst.start(exercise) }
     var next:String = ""
     do {
         println("Continuar con el mismo arrays? y/n")
         next = readln()
 
     } while (next != "y" && next != "n")
-    if (next == "n") numInst.start()
+    if (next == "n") numInst.start(exercise)
 
     when (exercise) {
         1 -> numInst.exec1()
         2 -> numInst.exec2()
         3 -> numInst.exec3()
         4 -> numInst.exec4()
+        5 -> numInst.exec5()
     }
 
 }

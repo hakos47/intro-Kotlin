@@ -1,23 +1,33 @@
 class Arrays {
     class Numbers {
         var numbers = emptyArray<Int>()
+        var stringsArray: MutableList<String> = mutableListOf()
 
-        fun start() {
-            println("Introduce los numeros para el array separado por espacios:")
+        fun start(exercise: Int) {
+            println("Introduce los numeros, o los strings, para el array separado por espacios:")
             val inputArray = readlnOrNull()
             if (inputArray.isNullOrEmpty()) {
                 return println("Array vacío")
             }
+            if (exercise == 5) {
+                val result = inputArray.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
+                this.stringsArray.clear()
+                this.stringsArray.addAll(result)
 
-            val result = inputArray.split(" ")
-                .mapNotNull { it.toIntOrNull() }
+                println("Array initialization: ${this.stringsArray.joinToString(", ")}")
 
-            if (result.isEmpty()) {
-                return println("Array vacío o contiene valores no numéricos")
+            } else {
+                val result = inputArray.split(" ")
+                    .mapNotNull { it.toIntOrNull() }
+
+                if (result.isEmpty()) {
+                    return println("Array vacío o contiene valores no numéricos")
+                }
+
+                this.numbers = result.toTypedArray()
+                println("Array initialization: ${this.numbers.joinToString(", ")}")
             }
 
-            this.numbers = result.toTypedArray()
-            println("Array initialization: ${this.numbers.joinToString(", ")}")
         }
 
         fun exec1() {
