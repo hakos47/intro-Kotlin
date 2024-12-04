@@ -53,6 +53,7 @@ fun ExecArrays(exercise: Int) {
     when (exercise) {
         1 -> numInst.exec1()
         2 -> numInst.exec2()
+        3 -> numInst.exec3()
     }
 
 }
