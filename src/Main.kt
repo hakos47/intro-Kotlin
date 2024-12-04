@@ -3,38 +3,38 @@
 fun menuNumbers() {
     println("\nQue ejercicios de Numeros quieres ejecutar?:")
     println("0. Return")
-    println("1. Exercise 1")
-    println("2. Exercise 2")
-    println("3. Exercise 3")
-    println("4. Exercise 4")
-    println("5. Exercise 5")
-    println("6. Exercise 6")
-    println("7. Exercise 7")
-    println("8. Exercise 8")
+    println("1. Crea una función que dado 2 números enteros los sume y devuelva el resultado")
+    println("2. Crea una función que dado 2 números enteros los multiplique y devuelva el resultado")
+    println("3. Crea una función que dado 2 números enteros (dividendo y divisor) los divida y devuelva el resultado solo si el divisor no es 0 en caso contrario devuelve nulo")
+    println("4. Crea una función que dado 2 números enteros los divida y devuelva la parte entera de la división. Si el divisor es 0 devuelve nulo")
+    println("5. Crea una función que calcule el porcentaje de victorias de un equipo de futbol según los partidos que ha jugado y los que ha ganado")
+    println("6. Crea una función que dados 2 números devuelva el de mayor valor")
+    println("7. Calcula el volumen de una piscina dado el ancho, largo y la altura")
+    println("8. Crea una función para calcular los X primeros números primos")
 
 }
 
 fun menuStrings() {
     println("\nQue ejercicios de Strings quieres ejecutar?:")
     println("0. Return")
-    println("1. Exercise 1")
-    println("2. Exercise 2")
-    println("3. Exercise 3")
-    println("4. Exercise 4")
-    println("5. Exercise 5")
-    println("6. Exercise 6")
+    println("1. Crea una función que dados 2 strings los concatene y los devuelva")
+    println("2. Crea una función que dada una frase sustituya un caracter por otro")
+    println("3. Crea una función que dado una frase borre el caracter que se le pasa si la contiene al principio o al final de la frase")
+    println("4. Crea una función que dado un texto devuelva 2 veces las 2 primeras letras. Ejemplo \"swift\" devuelve \"swsw\"")
+    println("5. Crea una función que dada una frase compruebe que los 2 primeros caracteres son iguales que los 2 últimos")
+    println("6. Comprueba que 2 textos son iguales independientemente de si son mayusculas o no")
 
 }
 
 fun menuArrays() {
     println("\nQue ejercicios de Arrays quieres ejecutar?:")
     println("0. Return")
-    println("1. Exercise 1")
-    println("2. Exercise 2")
-    println("3. Exercise 3")
-    println("4. Exercise 4")
-    println("5. Exercise 5")
-    println("6. Exercise 6")
+    println("1. Crea una función que dado un array de números inserte un número en una posición designada. Devuelve el nuevo array o nil en caso de que no sea posible")
+    println("2. Crea una función que dado un conjunto de enteros devuelva si existe un número dentro de él")
+    println("3. Crea una función que dado un conjunto de enteros devuelva el número de veces que se repite un número dado")
+    println("4. Crea una función que dado un conjunto de enteros los ordene de mayor a menor y devuelva el array resultante. NO SE PUEDE USAR SORT")
+    println("5. Crea una función que dado un conjunto de String añada un nuevo elemento que se le pase y devuelva el nuevo array")
+    println("6. Crea una función que dado un conjunto de Int devuelva el primer número entre 1 y 1000000 que no se encuentre dentro del array")
 
 }
 
