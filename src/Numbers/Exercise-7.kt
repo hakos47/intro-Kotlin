@@ -9,12 +9,12 @@ object Exercise7 {
     fun execution() {
         println("Exercise 7")
         println("Introduce el ancho")
-        val width = readLine()!!.toInt()
+        val width = readLine()?.toInt() ?: 0
         println("Introduce el largo")
-        val long = readLine()!!.toLong()
+        val long = readLine()?.toInt() ?: 0
         println("Introduce el Alto")
-        val height = readLine()!!.toInt()
-        var result: Int = volume(width, height, height)
+        val height = readLine()?.toInt() ?: 0
+        var result: Int = volume(width, long, height)
 
         println("Volumen $result m3")
         var litres: Int = result * 1000

@@ -64,7 +64,7 @@ fun ExecArrays(exercise: Int) {
 
 fun executeExercise(category: String, option: Int?) {
     if (category == "arrays") {
-        ExecArrays(option!!)
+        ExecArrays(option ?: 0)
     }
     when (option) {
         1 -> if (category == "numbers") Numbers.Exercise1.execution() else if (category == "strings") Strings.Exercise1.execution()
