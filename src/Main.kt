@@ -1,4 +1,8 @@
-@file:Suppress("UNUSED_EXPRESSION")
+import Numbers.*
+import Strings.Exercise5
+import Strings.Exercise6
+import entities.Product
+
 
 fun menuNumbers() {
     println("\nQue ejercicios de Numeros quieres ejecutar?:")
@@ -41,9 +45,13 @@ fun menuArrays() {
 var numInst = Arrays.Numbers()
 fun ExecArrays(exercise: Int) {
     println("numInst exercise=${numInst.numbers.isEmpty()}")
-    if (numInst.numbers.isEmpty() && exercise != 5) { numInst.start(exercise) }
-    if (numInst.stringsArray.isEmpty() && exercise == 5) { numInst.start(exercise) }
-    var next:String = ""
+    if (numInst.numbers.isEmpty() && exercise != 5) {
+        numInst.start(exercise)
+    }
+    if (numInst.stringsArray.isEmpty() && exercise == 5) {
+        numInst.start(exercise)
+    }
+    var next: String = ""
     do {
         println("Continuar con el mismo arrays? y/n")
         next = readln()
@@ -67,14 +75,14 @@ fun executeExercise(category: String, option: Int?) {
         ExecArrays(option ?: 0)
     }
     when (option) {
-        1 -> if (category == "numbers") Numbers.Exercise1.execution() else if (category == "strings") Strings.Exercise1.execution()
-        2 -> if (category == "numbers") Numbers.Exercise2.execution() else if (category == "strings") Strings.Exercise2.execution()
-        3 -> if (category == "numbers") Numbers.Exercise3.execution() else if (category == "strings") Strings.Exercise3.execution()
-        4 -> if (category == "numbers") Numbers.Exercise4.execution() else if (category == "strings") Strings.Exercise4.execution()
-        5 -> if (category == "numbers") Numbers.Exercise5.execution() else if (category == "strings") Strings.Exercise5.execution()
-        6 -> if (category == "numbers") Numbers.Exercise6.execution() else if (category == "strings") Strings.Exercise6.execution()
-        7 -> if (category == "numbers") Numbers.Exercise7.execution()
-        8 -> if (category == "numbers") Numbers.Exercise8.execution()
+        1 -> if (category == "numbers") Exercise1.execution() else if (category == "strings") Strings.Exercise1.execution()
+        2 -> if (category == "numbers") Exercise2.execution() else if (category == "strings") Strings.Exercise2.execution()
+        3 -> if (category == "numbers") Exercise3.execution() else if (category == "strings") Strings.Exercise3.execution()
+        4 -> if (category == "numbers") Exercise4.execution() else if (category == "strings") Strings.Exercise4.execution()
+        5 -> if (category == "numbers") Numbers.Exercise5.execution() else if (category == "strings") Exercise5.execution()
+        6 -> if (category == "numbers") Numbers.Exercise6.execution() else if (category == "strings") Exercise6.execution()
+        7 -> if (category == "numbers") Exercise7.execution()
+        8 -> if (category == "numbers") Exercise8.execution()
         else -> println("Opción inválida. Por favor, elige un número entre 1 y 8 o 0 para salir.")
     }
 }
@@ -84,76 +92,91 @@ fun executeExercise(category: String, option: Int?) {
 fun main() {
     //TIP   1. Tipos de Datos
 
-   // Enteros
-/*
-    val integer: Int = 29
-    val long: Long = 1000000000000L
+    // Enteros
+    /*
+        val integer: Int = 29
+        val long: Long = 1000000000000L
 
-    // Flotantes
+        // Flotantes
 
-    val float: Float = 3.14f
-    val double: Double = 3.14159265000054343
+        val float: Float = 3.14f
+        val double: Double = 3.14159265000054343
 
-    //Boolean
+        //Boolean
 
-    var isFavorite: Boolean = true
-    isFavorite = false
+        var isFavorite: Boolean = true
+        isFavorite = false
 
-    // Characters (Char)
+        // Characters (Char)
 
-    val characterr: Char = '#'
+        val characterr: Char = '#'
 
 
-    // Strings
+        // Strings
 
-    val regards: String = "Hola menu"
+        val regards: String = "Hola menu"
 
-    // print console
+        // print console
 
-    println("Entero: " + integer)
-    println("isFavourite: " + isFavorite)
-    println("regards: " + regards)
+        println("Entero: " + integer)
+        println("isFavourite: " + isFavorite)
+        println("regards: " + regards)
 
-    //TIP 2. Bucles
+        //TIP 2. Bucles
 
-    //  For(y sus derivados), while, DoWhile
-    for(i in 1..5 step 2) {
-        println("Value " + i)
-    }
+        //  For(y sus derivados), while, DoWhile
+        for(i in 1..5 step 2) {
+            println("Value " + i)
+        }
 
-    var vA = 3
-    var vB = 10
+        var vA = 3
+        var vB = 10
 
-    while (vA <= vB) {
-        vA++
-        vA.inc()
-        vA = vA+1
-        vA+=1
-        println("vA is $vA")
-    }
+        while (vA <= vB) {
+            vA++
+            vA.inc()
+            vA = vA+1
+            vA+=1
+            println("vA is $vA")
+        }
 
-    do {
-        vA++
-        println("Do while vA is $vA")
-    } while (vA < vB)
+        do {
+            vA++
+            println("Do while vA is $vA")
+        } while (vA < vB)
 
-    // 3. When (Cases) <- Switch
+        // 3. When (Cases) <- Switch
 
-    val day = 3
-    when(day) {
-        1 -> println("Today is Monday")
-        2 -> println("Yesterday is Tuesday")
-        3 -> println("Today is Wednesday")
-        4 -> println("Today is Thursday")
-        5 -> println("Today is Friday")
-        6 -> println("Today is Saturday")
-        7 -> println("Today is Sunday")
-        else -> println("No es un dia valido")
-    }
+        val day = 3
+        when(day) {
+            1 -> println("Today is Monday")
+            2 -> println("Yesterday is Tuesday")
+            3 -> println("Today is Wednesday")
+            4 -> println("Today is Thursday")
+            5 -> println("Today is Friday")
+            6 -> println("Today is Saturday")
+            7 -> println("Today is Sunday")
+            else -> println("No es un dia valido")
+        }
 
-    //TIP sout auto complete println
-   // println()
-*/
+        //TIP sout auto complete println
+       // println()
+    */
+
+
+    val product = Product(
+        id = 1,
+        name = "Air Fryer",
+        quantity = 1.0f,
+        image = "ramdon image",
+        description = "askdlj ",
+        price = 99f,
+        reference = "referencia"
+    )
+    product.recalculateTotalAmount()
+    product.name = "nuevo nombre"
+    product.discountPercent = 2f
+
     do {
         println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays) o escribe 'exit' para salir:")
         val category = readLine()?.lowercase()
@@ -161,7 +184,7 @@ fun main() {
         if (category == "exit") break
 
         when (category) {
-            "numbers", "strings", "arrays"-> {
+            "numbers", "strings", "arrays" -> {
                 do {
                     if (category == "strings") menuStrings()
                     else if (category == "numbers") menuNumbers()
@@ -173,6 +196,7 @@ fun main() {
 
                 } while (option != 0)
             }
+
             else -> println("Categoría inválida. Por favor, escribe 'numbers', 'strings' o 'exit'.")
         }
     } while (category != "exit")
