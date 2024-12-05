@@ -10,5 +10,4 @@ fun customSort(array: IntArray):IntArray {
 fun Arrays.Numbers.exec4() {
     val sortedArray = customSort(this.numbers.toIntArray())
     println("\n Array ordenada: ${sortedArray.joinToString(", ")}")
-
 }
