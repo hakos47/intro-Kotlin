@@ -1,6 +1,7 @@
 import ArrayAndObjets.ClassExec2
 import ArrayAndObjets.ClassExec3
 import ArrayAndObjets.ClassExec4
+import ArrayAndObjets.ClassExec5
 import Numbers.*
 import Strings.Exercise5
 import Strings.Exercise6
@@ -88,6 +89,7 @@ fun ExecClass(option: Int) {
         2 -> ClassExec2()
         3 -> ClassExec3()
         4 -> ClassExec4()
+        5 -> ClassExec5()
 
     }
 }
