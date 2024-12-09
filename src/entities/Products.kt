@@ -14,8 +14,8 @@ class Product(
     ) : ProductUseCase {
     override fun isProductValid(product: Product): Boolean {
         return product.quantity >= quantity
-    }
-    } /*{
+        }
+     /*{
     var discountPercent: Float = 0f
     fun recalculateTotalAmount() {
 
