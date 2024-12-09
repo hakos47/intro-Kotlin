@@ -20,10 +20,35 @@ class Student(
     val id: Int,
     val name: String,
     var age: Int,
-    var isApproved: Boolean = false,
-    var isProgressing: Boolean = false
+    isApproved: Boolean = false,
+    isProgressing: Boolean = false
 
 ) : StudentInterface {
+    var isApproved :Boolean = isApproved
+    set(value) {
+        field = value
+        updateNeedHelp()
+    }
+
+    var isProgressing :Boolean = isProgressing
+    set(value) {
+        field = value
+        updateNeedHelp()
+    }
+    var needHelp: Boolean = false
+        private set
+
+    init {
+        updateNeedHelp()
+    }
+    private fun updateNeedHelp() {
+        needHelp = !isApproved && !isProgressing
+    }
+    override fun needHelp(): Boolean {
+        if (!isApproved && !isProgressing) return true
+        return false
+
+    }
     override fun write() {
     }
 
