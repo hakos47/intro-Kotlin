@@ -1,8 +1,6 @@
 import Numbers.*
 import Strings.Exercise5
 import Strings.Exercise6
-import entities.Product
-
 
 fun menuNumbers() {
     println("\nQue ejercicios de Numeros quieres ejecutar?:")
@@ -42,6 +40,14 @@ fun menuArrays() {
 
 }
 
+fun menuClass() {
+    println("\nQue ejercicios de Objetos y arrays quieres ejecutar?:")
+    println("0. Return")
+    println("1. Crea las clases necesarias para definir clases y alumnos y añade. Crea 1 array con 2 clases con 10 alumnos cada una con valores de ejemplo")
+    println("2. Imprime por consola todos los alumnos cuyo nombre contiene \"a\" en cada una de las clases")
+
+}
+
 var numInst = Arrays.Numbers()
 fun ExecArrays(exercise: Int) {
     println("numInst exercise=${numInst.numbers.isEmpty()}")
@@ -70,9 +76,23 @@ fun ExecArrays(exercise: Int) {
 
 }
 
+fun ExecClass(option: Int) {
+    println("Exec clas")
+    when (option) {
+        1 -> ClassExec1()
+        2 -> ClassExec2()
+    }
+}
+
 fun executeExercise(category: String, option: Int?) {
+    println("category=$category, option=$option")
     if (category == "arrays") {
-        ExecArrays(option ?: 0)
+        return ExecArrays(option ?: 0)
+
+    }
+    if (category == "class") {
+        println("class")
+        return ExecClass(option ?: 0)
     }
     when (option) {
         1 -> if (category == "numbers") Exercise1.execution() else if (category == "strings") Strings.Exercise1.execution()
@@ -164,31 +184,32 @@ fun main() {
     */
 
 
-    val product = Product(
-        id = 1,
-        name = "Air Fryer",
-        quantity = 1.0f,
-        image = "ramdon image",
-        description = "askdlj ",
-        price = 99f,
-        reference = "referencia"
-    )
-    product.recalculateTotalAmount()
-    product.name = "nuevo nombre"
-    product.discountPercent = 2f
-
+    /*   val product = Product(
+           id = 1,
+           name = "Air Fryer",
+           quantity = 1.0f,
+           image = "ramdon image",
+           description = "askdlj ",
+           price = 99f,
+           reference = "referencia"
+       )
+       product.recalculateTotalAmount()
+       product.name = "nuevo nombre"
+       product.discountPercent = 2f
+   */
     do {
-        println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays) o escribe 'exit' para salir:")
+        println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays/class) o escribe 'exit' para salir:")
         val category = readLine()?.lowercase()
 
         if (category == "exit") break
 
         when (category) {
-            "numbers", "strings", "arrays" -> {
+            "numbers", "strings", "arrays", "class" -> {
                 do {
                     if (category == "strings") menuStrings()
                     else if (category == "numbers") menuNumbers()
                     else if (category == "arrays") menuArrays()
+                    else if (category == "class") menuClass()
                     val option = readLine()?.toIntOrNull()
                     if (option == null) break
                     if (option == 0) break
