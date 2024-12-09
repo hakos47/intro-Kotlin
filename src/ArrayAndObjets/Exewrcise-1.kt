@@ -19,7 +19,10 @@ class ClassRoom(
 class Student(
     val id: Int,
     val name: String,
-    var age: Int
+    var age: Int,
+    var isApproved: Boolean = false,
+    var isProgressing: Boolean = false
+
 ) : StudentInterface {
     override fun write() {
     }

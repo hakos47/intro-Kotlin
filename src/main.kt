@@ -1,4 +1,5 @@
 import ArrayAndObjets.ClassExec2
+import ArrayAndObjets.ClassExec3
 import Numbers.*
 import Strings.Exercise5
 import Strings.Exercise6
@@ -46,6 +47,7 @@ fun menuClass() {
     println("0. Return")
     println("1. Crea las clases necesarias para definir clases y alumnos y añade. Crea 1 array con 2 clases con 10 alumnos cada una con valores de ejemplo")
     println("2. Imprime por consola todos los alumnos cuyo nombre contiene \"a\" en cada una de las clases")
+    println("3. Añade un atributo nuevo a la clase que sea isApproved y otra que sea isProgressing e imprime todos los alumnos suspendidos que no esten progresando de cada clase")
 
 }
 
@@ -82,6 +84,7 @@ fun ExecClass(option: Int) {
     when (option) {
         1 -> ClassExec1()
         2 -> ClassExec2()
+        3 -> ClassExec3()
     }
 }
 
