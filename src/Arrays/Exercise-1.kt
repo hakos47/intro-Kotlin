@@ -10,15 +10,14 @@ class Arrays {
                 return println("Array vacío")
             }
             if (exercise == 5) {
-                val result = inputArray.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
+                val result = inputArray.split(" ") .filter { it.isNotEmpty() }
                 this.stringsArray.clear()
                 this.stringsArray.addAll(result)
 
                 println("Array initialization: ${this.stringsArray.joinToString(", ")}")
 
             } else {
-                val result = inputArray.split(" ")
-                    .mapNotNull { it.toIntOrNull() }
+                val result = inputArray.split(" ").mapNotNull { it.toIntOrNull() }
 
                 if (result.isEmpty()) {
                     return println("Array vacío o contiene valores no numéricos")

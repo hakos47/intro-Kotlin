@@ -1,3 +1,11 @@
+/* 4. Crea una función que dado un conjunto de enteros los ordene de mayor a menor
+* y devuelva el array resultante. NO SE PUEDE USAR SORT
+* 1. obtener el array this.numbers
+*
+*
+* */
+
+
 fun customSort(array: IntArray):IntArray {
     if (array.size <= 1) return array
     val pivot = array[0]
