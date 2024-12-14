@@ -73,7 +73,7 @@ fun ExecArrays(exercise: Int) {
     var next: String = ""
     do {
         println("Continuar con el mismo arrays? y/n")
-        next = readln()
+        next = readlnOrNull() ?: next
 
     } while (next != "y" && next != "n")
     if (next == "n") numInst.start(exercise)
@@ -128,6 +128,7 @@ fun ExecStrings(option: Int) {
     }
 }
 fun FilterExercise(category: String, option: Int?) {
+    if (option == 0) return
     when (category) {
         "arrays" -> ExecArrays(option ?: 0)
         "arraysAndObjects" -> ExecArraysAndObjects(option ?: 0)
@@ -136,14 +137,29 @@ fun FilterExercise(category: String, option: Int?) {
     }
 }
 
-fun ShowMenuSelection(category: String) {
+fun ShowMenuSelection(category: String):Int {
     when (category) {
-        "strings" -> menuStrings()
-        "numbers" -> menuNumbers()
-        "arrays" -> menuArrays()
-        "arraysAndObjects" -> menuArraysAndObjects()
-        "objects" -> menuObjects()
-        else ->  println("Categoría inválida. Por favor, escribe 'numbers', 'strings' o 'exit'.")
+        "strings" -> {
+            menuStrings()
+            return 1
+        }
+        "numbers" -> {
+            menuNumbers()
+            return 1
+        }
+        "arrays" -> {
+            menuArrays()
+            return 1
+        }
+        "arraysAndObjects" -> {
+            menuArraysAndObjects()
+            return 1
+        }
+        "objects" -> {
+            menuObjects()
+            return 1
+        }
+        else ->  return -1
     }
 
 }
@@ -159,7 +175,11 @@ fun main() {
     do {
         val category = InitMenuGetCaregory()
         do {
-            ShowMenuSelection(category)
+            val success = ShowMenuSelection(category)
+            if (success == -1) {
+                println("Categoria invalida!!")
+                break
+            }
             val option = readlnOrNull()?.toIntOrNull() ?: break
             FilterExercise(category, option)
         } while (option != 0)
