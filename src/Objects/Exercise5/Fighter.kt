@@ -5,7 +5,7 @@ class Fighter(
     override var health: Int,
     override var crew: Int,
     var shots: Int
-) : Spaceship(name, health, crew) {
+) : Spaceship(name, health, crew) , FighterInterface {
     fun shoot() {
         if (shots > 0) {
             shots--
