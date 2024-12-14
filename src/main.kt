@@ -41,7 +41,17 @@ fun menuArrays() {
 
 }
 
-fun menuClass() {
+fun menuObjects() {
+    println("\nQue ejercicios de Objectos quieres ejecutar?:")
+    println("0. Return")
+    println("1. Crea las clases necesarias para definir clases y alumnos y añade. Crea 1 array con 2 clases con 10 alumnos cada una con valores de ejemplo")
+    println("2. Imprime por consola todos los alumnos cuyo nombre contiene \"a\" en cada una de las clases")
+    println("3. Añade un atributo nuevo a la clase que sea isApproved y otra que sea isProgressing e imprime todos los alumnos suspendidos que no esten progresando de cada clase")
+    println("4. Añade un atributo nuevo a la clase que sea needHelp que sera true cuando isApproved e isProgressing sean false. Este atributo se debe autocalcular al iniciar la clase \n o cambiar el valor de isApproved o isProgressing a false e imprime todos los \n alumnos suspendidos de cada clase que necesitan ayuda ")
+    println("5. Obten un array nuevo de alumnos suspendidos de todas las clases")
+}
+
+fun menuArraysAndObjects() {
     println("\nQue ejercicios de Objetos y arrays quieres ejecutar?:")
     println("0. Return")
     println("1. Crea las clases necesarias para definir clases y alumnos y añade. Crea 1 array con 2 clases con 10 alumnos cada una con valores de ejemplo")
@@ -79,7 +89,7 @@ fun ExecArrays(exercise: Int) {
 
 }
 
-fun ExecClass(option: Int) {
+fun ExecArraysAndObjects(option: Int) {
     println("Exec clas")
     when (option) {
         1 -> ClassExec1()
@@ -91,55 +101,69 @@ fun ExecClass(option: Int) {
     }
 }
 
-fun executeExercise(category: String, option: Int?) {
-    println("category=$category, option=$option")
-    if (category == "arrays") {
-        return ExecArrays(option ?: 0)
-
-    }
-    if (category == "class") {
-        println("class")
-        return ExecClass(option ?: 0)
-    }
+fun ExecNumbers(option: Int) {
     when (option) {
-        1 -> if (category == "numbers") Exercise1.execution() else if (category == "strings") Strings.Exercise1.execution()
-        2 -> if (category == "numbers") Exercise2.execution() else if (category == "strings") Strings.Exercise2.execution()
-        3 -> if (category == "numbers") Exercise3.execution() else if (category == "strings") Strings.Exercise3.execution()
-        4 -> if (category == "numbers") Exercise4.execution() else if (category == "strings") Strings.Exercise4.execution()
-        5 -> if (category == "numbers") Numbers.Exercise5.execution() else if (category == "strings") Exercise5.execution()
-        6 -> if (category == "numbers") Numbers.Exercise6.execution() else if (category == "strings") Exercise6.execution()
-        7 -> if (category == "numbers") Exercise7.execution()
-        8 -> if (category == "numbers") Exercise8.execution()
-        else -> println("Opción inválida. Por favor, elige un número entre 1 y 8 o 0 para salir.")
+        1 -> Exercise1.execution()
+        2 -> Exercise2.execution()
+        3 -> Exercise3.execution()
+        4 -> Exercise4.execution()
+        5 -> Numbers.Exercise5.execution()
+        6 -> Numbers.Exercise6.execution()
+        7 -> Exercise7.execution()
+        8 -> Exercise8.execution()
+        else -> println("\n Opcion no valida\n")
     }
+
+}
+
+fun ExecStrings(option: Int) {
+    when (option) {
+        1 -> Strings.Exercise1.execution()
+        2 -> Strings.Exercise2.execution()
+        3 -> Strings.Exercise3.execution()
+        4 -> Strings.Exercise4.execution()
+        5 -> Exercise5.execution()
+        6 -> Exercise6.execution()
+        else -> println("\n Opcion no valida\n")
+    }
+}
+fun FilterExercise(category: String, option: Int?) {
+    when (category) {
+        "arrays" -> ExecArrays(option ?: 0)
+        "arraysAndObjects" -> ExecArraysAndObjects(option ?: 0)
+        "numbers" -> ExecNumbers(option ?: 0)
+        "strings" -> ExecStrings(option ?: 0)
+    }
+}
+
+fun ShowMenuSelection(category: String) {
+    when (category) {
+        "strings" -> menuStrings()
+        "numbers" -> menuNumbers()
+        "arrays" -> menuArrays()
+        "arraysAndObjects" -> menuArraysAndObjects()
+        "objects" -> menuObjects()
+        else ->  println("Categoría inválida. Por favor, escribe 'numbers', 'strings' o 'exit'.")
+    }
+
+}
+
+fun InitMenuGetCaregory(): String {
+    println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays/arraysAndObjects) o escribe 'exit' para salir:")
+    val category = readlnOrNull()
+    if (category.isNullOrBlank()) return "none"
+    return category
 }
 
 fun main() {
     do {
-        println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays/class) o escribe 'exit' para salir:")
-        val category = readLine()?.lowercase()
+        val category = InitMenuGetCaregory()
+        do {
+            ShowMenuSelection(category)
+            val option = readlnOrNull()?.toIntOrNull() ?: break
+            FilterExercise(category, option)
+        } while (option != 0)
 
-        if (category == "exit") break
-
-        when (category) {
-            "numbers", "strings", "arrays", "class" -> {
-                do {
-                    if (category == "strings") menuStrings()
-                    else if (category == "numbers") menuNumbers()
-                    else if (category == "arrays") menuArrays()
-                    else if (category == "class") menuClass()
-                    val option = readLine()?.toIntOrNull()
-                    if (option == null) break
-                    if (option == 0) break
-                    executeExercise(category, option)
-
-                } while (option != 0)
-            }
-
-            else -> {
-                println("Categoría inválida. Por favor, escribe 'numbers', 'strings' o 'exit'.")
-            }
-        }
     } while (category != "exit")
 }
 
