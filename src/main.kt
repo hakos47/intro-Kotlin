@@ -135,7 +135,7 @@ fun ExecObects(option: Int) {
         3 -> Objects.exercise3()
         4 -> Objects.exercise4()
         5 -> Objects.exercise5()
-        6 ->{}
+        6 -> Objects.exercise6()
         7->{}
         else -> println("\n Opcion no valida\n")
     }
