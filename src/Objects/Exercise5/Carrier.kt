@@ -4,14 +4,14 @@ class Carrier(
     override val name: String,
     override var health: Int,
     override var crew: Int,
-    var fighters: MutableList<Fighter>,
-    var shots: Int = 0
-) : Spaceship(name, health, crew) {
+    override var fighters: MutableList<Fighter>,
+    override var shots: Int = 0
+) : Spaceship(name, health, crew), CarrierInterface  {
     override fun toString(): String {
         return "Carrier(name='$name', health=$health, crew=$crew, fighters=${fighters.size}, shots=$shots)"
     }
 
-    fun shoot() {
+    override fun shoot() {
         if (shots > 0) {
             shots--
             println("$name dispara. Disparos restantes: $shots")
@@ -20,7 +20,7 @@ class Carrier(
         }
     }
 
-    fun launchFighter(): Fighter? {
+    override fun launchFighter(): Fighter? {
         return if (fighters.isNotEmpty()) {
             val launchedFighter = fighters.removeAt(0)
             println("$name lanza un caza: ${launchedFighter.name}. Cazas restantes: ${fighters.size}")
