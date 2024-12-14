@@ -90,14 +90,12 @@ fun ExecArrays(exercise: Int) {
 }
 
 fun ExecArraysAndObjects(option: Int) {
-    println("Exec clas")
     when (option) {
         1 -> ClassExec1()
         2 -> ClassExec2()
         3 -> ClassExec3()
         4 -> ClassExec4()
         5 -> ClassExec5()
-
     }
 }
 
@@ -127,13 +125,20 @@ fun ExecStrings(option: Int) {
         else -> println("\n Opcion no valida\n")
     }
 }
-fun FilterExercise(category: String, option: Int?) {
+
+fun ExecObects(option: Int) {
+    when (option) {
+        1 -> Objects.Exercise1()
+    }
+}
+fun FilterExercise(category: String, option: Int) {
     if (option == 0) return
     when (category) {
-        "arrays" -> ExecArrays(option ?: 0)
-        "arraysAndObjects" -> ExecArraysAndObjects(option ?: 0)
-        "numbers" -> ExecNumbers(option ?: 0)
-        "strings" -> ExecStrings(option ?: 0)
+        "arrays" -> ExecArrays(option)
+        "arraysAndObjects" -> ExecArraysAndObjects(option)
+        "numbers" -> ExecNumbers(option)
+        "strings" -> ExecStrings(option)
+        "objects" -> ExecObects(option)
     }
 }
 
@@ -165,7 +170,7 @@ fun ShowMenuSelection(category: String):Int {
 }
 
 fun InitMenuGetCaregory(): String {
-    println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays/arraysAndObjects) o escribe 'exit' para salir:")
+    println("\n Selecciona el tipo de ejercicios (numbers/strings/arrays/arraysAndObjects/objects) o escribe 'exit' para salir:")
     val category = readlnOrNull()
     if (category.isNullOrBlank()) return "none"
     return category
@@ -180,8 +185,8 @@ fun main() {
                 println("Categoria invalida!!")
                 break
             }
-            val option = readlnOrNull()?.toIntOrNull() ?: break
-            FilterExercise(category, option)
+            val option = readlnOrNull()?.toIntOrNull()
+            if (option !=null) FilterExercise(category, option)
         } while (option != 0)
 
     } while (category != "exit")
