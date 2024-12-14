@@ -6,7 +6,7 @@ class Brand(
     override val country: String
 ) : BrandInterface {
     override fun toString(): String {
-        return "$brand $year $country"
+        return "$brand $year $country -> Brand"
     }
     companion object {
         fun create(brand: String, year: Int, country: String) : BrandInterface {

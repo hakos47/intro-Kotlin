@@ -129,6 +129,11 @@ fun ExecStrings(option: Int) {
 fun ExecObects(option: Int) {
     when (option) {
         1 -> Objects.Exercise1()
+        2 -> Objects.Exercise2()
+        3 ->{}
+        4 ->{}
+        5 ->{}
+        else -> println("\n Opcion no valida\n")
     }
 }
 fun FilterExercise(category: String, option: Int) {
