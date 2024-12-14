@@ -7,7 +7,7 @@ interface CharacterInterface {
     var defense : Int
     var race: String
 
-    fun takeDamage(damage: Int)
+    fun takeDamage(damage: Int): Int
 
     fun isAlive(): Boolean
 }

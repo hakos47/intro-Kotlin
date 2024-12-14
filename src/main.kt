@@ -44,11 +44,13 @@ fun menuArrays() {
 fun menuObjects() {
     println("\nQue ejercicios de Objectos quieres ejecutar?:")
     println("0. Return")
-    println("1. Crea las clases necesarias para definir clases y alumnos y añade. Crea 1 array con 2 clases con 10 alumnos cada una con valores de ejemplo")
-    println("2. Imprime por consola todos los alumnos cuyo nombre contiene \"a\" en cada una de las clases")
-    println("3. Añade un atributo nuevo a la clase que sea isApproved y otra que sea isProgressing e imprime todos los alumnos suspendidos que no esten progresando de cada clase")
-    println("4. Añade un atributo nuevo a la clase que sea needHelp que sera true cuando isApproved e isProgressing sean false. Este atributo se debe autocalcular al iniciar la clase \n o cambiar el valor de isApproved o isProgressing a false e imprime todos los \n alumnos suspendidos de cada clase que necesitan ayuda ")
-    println("5. Obten un array nuevo de alumnos suspendidos de todas las clases")
+    println("1. Crea un función con los parámetros que necesites que cree y devuelva un objeto marca de coche con el nombre de la marca el año de creación y el país de origen")
+    println("2. Crea una función con los parámetros que necesites que cree y devuelva un objeto coche que tenga un nombre de modelo, fecha de fabricación, número de caballos y marca")
+    println("3.Vamos a crear un objeto que va a representar a un personaje con las siguiente caracteristicas: nombre, salud, ataque, defensa, raza(orco, humano, elfo) y funciones para reducir la salud por un número dado menos la defensa del personaje, Crea una función con los parámetros que necesites que cree un personaje y lo devuelva")
+    println("4. Crea 2 personajes y ataca al otro personaje reduciendo su salud en función de tus puntos de ataque")
+    println("5. Crea un objeto nave espacial que tenga estas caracteristicas: (nombre, salud, tripulaicon). Crea un objeto caza que hereda de nave espacial y tenga como caracteristicas: (nombre, disparos, funcion disparar que vaya restando el numero de disparos.Crea un objeto porta-cazas que hereda de nave espacial y tenga como características: - núnero de cazas: disparos, funcion disparar, funcion laznar cazas que vaya reduciendose haste que no queden cazas ")
+    println("6. Crea un objeto o objetos como consideres que defina animales como perro, pajaro o ballena ")
+    println("7. Crea un objeto o objetos como consideres que defina usuarios, administradores y roles para una aplicación")
 }
 
 fun menuArraysAndObjects() {
@@ -131,8 +133,10 @@ fun ExecObects(option: Int) {
         1 -> Objects.exercise1()
         2 -> Objects.exercise2()
         3 -> Objects.exercise3()
-        4 ->{}
+        4 -> Objects.exercise4()
         5 ->{}
+        6 ->{}
+        7->{}
         else -> println("\n Opcion no valida\n")
     }
 }
@@ -166,6 +170,7 @@ fun ShowMenuSelection(category: String):Int {
             return 1
         }
         "objects" -> {
+            println("entro aqui")
             menuObjects()
             return 1
         }

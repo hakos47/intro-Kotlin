@@ -10,12 +10,15 @@ class Character(
     override fun toString(): String {
         return "Nombre: $name, Vida: $health, Ataque: $attack, Defensa: $defense, Raza: $race"
     }
-    override fun takeDamage(damage: Int) {
+    override fun takeDamage(damage: Int): Int {
+        var realDamage = damage - defense
         if (damage > defense) {
-            health -= (damage - defense)
+            health -= realDamage
         } else {
+            realDamage = 0
             println("Tiene demasiada defesa, el ataque no hizo efecto")
         }
+        return realDamage
 
     }
 
