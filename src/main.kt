@@ -134,7 +134,7 @@ fun ExecObects(option: Int) {
         2 -> Objects.exercise2()
         3 -> Objects.exercise3()
         4 -> Objects.exercise4()
-        5 ->{}
+        5 -> Objects.exercise5()
         6 ->{}
         7->{}
         else -> println("\n Opcion no valida\n")
@@ -170,7 +170,6 @@ fun ShowMenuSelection(category: String):Int {
             return 1
         }
         "objects" -> {
-            println("entro aqui")
             menuObjects()
             return 1
         }
