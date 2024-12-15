@@ -4,9 +4,9 @@ class Fighter(
     override val name: String,
     override var health: Int,
     override var crew: Int,
-    var shots: Int
+    override var shots: Int
 ) : Spaceship(name, health, crew) , FighterInterface {
-    fun shoot() {
+    override fun shoot() {
         if (shots > 0) {
             shots--
             println("$name dispara. Disparos restantes: $shots")
